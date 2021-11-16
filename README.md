@@ -21,7 +21,7 @@ Install dependencies:
 
 ## usage
 
-usage: check_pass_fail.py [-h] -a APP [-s SANDBOX] [--delete]
+usage: check_pass_fail.py [-h] -a APP [-s SANDBOX] 
 
 Note: at a minimum APP is required.  
 
@@ -32,13 +32,6 @@ If you have saved credentials as above you can run:
     python check_pass_fail.py -a <your app name>
     or
     python check_pass_fail.py -a <your app name> -s <your sandbox name>
-
-To delete use the following commands:
-
-    python check_pass_fail.py -a <your app name> --delete
-    or
-    python check_pass_fail.py -a <your app name> -s <your sandbox name> --delete
-
 
 Otherwise you will need to set environment variables before running `example.py`:
 
