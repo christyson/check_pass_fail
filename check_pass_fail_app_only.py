@@ -15,7 +15,7 @@ def main():
         description='This script checks to see if an app is currently building a policy scan and returns 0 if not and 1 otherwise or if the --delete flag is set it will delete that build if you have permissions and return a 0 if the build is deleted and 1 if the build is not deleted. Note: Sandbox is optional')
     parser.add_argument('-a', '--app', action='append', help='App name(s) to check',required=True)
     args = parser.parse_args()
-
+    error = "error"
     data = VeracodeAPI().get_app_list()
     results = etree.fromstring(data)
     for _, value in parser.parse_args()._get_kwargs():
@@ -27,9 +27,13 @@ def main():
                    found = True
                    build_info = VeracodeAPI().get_build_info(app.attrib["app_id"])
                    info=etree.fromstring(build_info)
-                   for child in info :
-                      time=parse(child.attrib["policy_updated_date"])
-                      print("App: "+name +" build: "+child.attrib["build_id"]+ " on: " +str(time.date()) +" at: " +str(time.time())+" policy compliance is: " + child.attrib["policy_compliance_status"])
+                   bi = str(build_info)
+                   if error in bi:
+                      print("App: "+name +" reports \""+info.text+"\"")
+                   else:
+                      for child in info :
+                         time=parse(child.attrib["policy_updated_date"])
+                         print("App: "+name +" build: "+child.attrib["build_id"]+ " on: " +str(time.date()) +" at: " +str(time.time())+" policy compliance is: " + child.attrib["policy_compliance_status"])
              if (not found):
                 print ('App: '+name+' does not exist')
     exit(0)

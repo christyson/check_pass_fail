@@ -1,0 +1,6 @@
+App: VeraDemo_AzureDevOps build: 15192887 on: 2021-11-16 at: 07:19:30 policy compliance is: Did Not Pass
+App: Verademo_gitlab2 build: 15156398 on: 2021-11-13 at: 23:07:25 policy compliance is: Did Not Pass
+App: VeraDemo.net_ADO_yaml build: 15121632 on: 2021-11-11 at: 15:35:51 policy compliance is: Did Not Pass
+App: test does not exist
+App: Lunar Lander build: 789202 on: 2018-08-21 at: 14:12:22 policy compliance is: Pass
+App: WebGoat-ITest reports "Could not find a build for application=381125"
