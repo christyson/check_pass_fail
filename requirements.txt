@@ -1,0 +1,5 @@
+requests>=2.21.0
+lxml
+veracode-api-signing>=19.9.0
+veracode_api_py
+python-dateutil
