@@ -15,7 +15,6 @@ def main():
         description='This script checks to see if an app is currently building a policy scan and returns 0 if not and 1 otherwise or if the --delete flag is set it will delete that build if you have permissions and return a 0 if the build is deleted and 1 if the build is not deleted. Note: Sandbox is optional')
     parser.add_argument('-a', '--app', help='App name to check',required=True)
     parser.add_argument('-s', '--sandbox', default="", help='Sandbox name to check',required=False)
-    parser.add_argument('--delete',default=False, action='store_true', help='If set to True and a build is running it will be deleted', required=False)
     args = parser.parse_args()
 
     data = VeracodeAPI().get_app_list()
